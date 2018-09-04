@@ -4,7 +4,8 @@ class Patient
     
     def initialize
         @patients << {patient:{
-            name: password: dob: age: height: weight: ailment: treatment: time: Time.now
+            name: "", password: "", dob: "", age: 0, height: 0, weight: 0, ailment: "", treatment: "", 
+            time: Time.now
         }}
     end
 end
