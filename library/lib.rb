@@ -2,10 +2,10 @@
 module Lib
     def file_exists?(file_name)
         if File.exist?(file_name) 
-            puts "File exists"
+            # TEST puts "File exists"
         else
             File.open(file_name, 'w+')
-            puts "File created"
+            # TEST puts "File created"
         end
     end
 end
