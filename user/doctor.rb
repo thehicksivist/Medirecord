@@ -12,6 +12,10 @@ Class Doctor
         #decrypt name and password
         #compare entered details, accept if correct
     end
+    def doctor_exists?(name, password)
+        #return true if name and pasword matches
+    end
+    #if doctor exists, login > select record (list patients by name)
 end
 #create methods
 #methods; view all patients, create patient, edit existing patients
