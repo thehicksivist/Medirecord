@@ -1,4 +1,6 @@
 require_relative "../medirecord/user/patient"
+require_relative "../medirecord/library/functions"
+include Lib
 
 #patient = Patient.new
 # puts patient
@@ -10,9 +12,5 @@ puts "If this is an emergency, please call 000."
 doctor_filename = "data/doctor.json"
 patient_filename = "data/patient.json"
 
-#3 check if exists, create if not
-if doctor_filename.exist? 
-break
-else
-    File.open(doctor_filename, 'w+')
-end
+Lib::file_exists?(doctor_filename)
+Lib::file_exists?(patient_filename)
