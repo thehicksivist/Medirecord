@@ -1,5 +1,6 @@
 # MediRecord
-#A link to your GitHub repository (Ensure the repository (repo) is accessible by your Educators)
+
+https://github.com/thehicksivist/Medirecord
 
 #Program Description and Functionality:
 MediRecord is a terminal application, designed for the use of patients and doctors to view medical records.
@@ -97,5 +98,6 @@ Build order: (TDD considered)
 	* Implemention of optional features
 
 #app User/Workflow diagram
+![App User/ Workflow Diagram](docs/UserWorkflowDiagram.png)
 
 #Screenshots of Trello board(s)
