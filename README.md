@@ -2,13 +2,13 @@
 #A link to your GitHub repository (Ensure the repository (repo) is accessible by your Educators)
 
 #Program Description and Functionality:
-<!-- MediRecord is a terminal application, designed for the use of patients and doctors to view medical records.
+MediRecord is a terminal application, designed for the use of patients and doctors to view medical records.
 There are two types of users: Patients and Doctors
 Patients are able to view their own records, current or historical.
-Doctors have access to all patient records, and update their details, and create new user accounts. -->
+Doctors have access to all patient records, and update their details, and create new user accounts.
 
 #Details of design & planning process:
-<!-- 
+
 BRAINSTORMING IDEAS:
 
 Travel info app
@@ -94,7 +94,7 @@ Build order: (TDD considered)
     * Patient view records (2hrs)
 	* Doctor view+editing records (2hrs)
     * Doctor creating users (1hr)
-	* Implemention of optional features -->
+	* Implemention of optional features
 
 #app User/Workflow diagram
 
