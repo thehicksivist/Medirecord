@@ -35,15 +35,16 @@ app_guide.run_medirecord!
 
 
 
-patients = 
-[{patient:"John",password:"123John",dob:"21/02/1990",age:"25",date:"19/02/2018",illness:"",treatment: "" }, 
- {patient:"Sara",password:"123Sara",dob:"01/02/1995",age:"28",date:"19/06/2018",illness:"",treatment: "" },
- {patient:"Does",password:"123Does",dob:"20/05/1988",age:"30",date:"19/02/2018",illness:"",treatment: "" },
-]
+patients = [
+    {patient: [{username:"John",password:"123John",dob:"21/02/1990",age:"25",date:"19/02/2018",illness:"Flue",treatment: "Panadol Rapid" }]}, 
+    {patient: [{username:"Sara",password:"123Sara",dob:"01/02/1995",age:"28",date:"19/06/2018",illness:"",treatment: "" }]},
+    {patient: [{username:"Does",password:"123Does",dob:"20/05/1988",age:"30",date:"19/02/2018",illness:"",treatment: "" }]}
+    ]
 doctors  = 
 [   {doctor: "christopher",password: "111christ", age: "45", specialty: "GP"}, 
     {doctor: "randolphoe", password: "111rando" , age: "55", specialty: "Surgeon"}
 ]
+
 # secur_data = SecureData.new
 
 # patients.each do |patient, val|
@@ -64,16 +65,6 @@ doctors  =
 #     doctor[:age]      = SecureData.encrypt(doctor[:age])
 #     doctor[:specialty] = SecureData.encrypt(doctor[:specialty])
 # end
-
-
-
-
-
-
-
-
-
-
 
 
 # puts "-" * 60
