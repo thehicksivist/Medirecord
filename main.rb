@@ -12,6 +12,19 @@ require 'app_guide'
 doctor_file_path = "data/doctor.json"
 patient_file_path = "data/patient.json"
 
+patients = [
+    {patient: [{username:"John",password:"123John",dob:"21/02/1990",age:"25",date:"19/02/2018",illness:"Flue",treatment: "Panadol Rapid" }]}, 
+    {patient: [{username:"Sara",password:"123Sara",dob:"01/02/1995",age:"28",date:"19/06/2018",illness:"",treatment: "" }]},
+    {patient: [{username:"Does",password:"123Does",dob:"20/05/1988",age:"30",date:"19/02/2018",illness:"",treatment: "" }]}
+    ]
+doctors  = 
+[   {doctor: "christopher",password: "111christ", age: "45", specialty: "GP"}, 
+    {doctor: "randolphoe", password: "111rando" , age: "55", specialty: "Surgeon"}
+]
+
+#File.write(patient_file_path, JSON.dump(patients))
+
+
 # 5. Create new App Guide 
 app_guide = AppGuide.new(doctor_file_path, patient_file_path)
 
@@ -35,15 +48,7 @@ app_guide.run_medirecord!
 
 
 
-# patients = [
-#     {patient: [{username:"John",password:"123John",dob:"21/02/1990",age:"25",date:"19/02/2018",illness:"Flue",treatment: "Panadol Rapid" }]}, 
-#     {patient: [{username:"Sara",password:"123Sara",dob:"01/02/1995",age:"28",date:"19/06/2018",illness:"",treatment: "" }]},
-#     {patient: [{username:"Does",password:"123Does",dob:"20/05/1988",age:"30",date:"19/02/2018",illness:"",treatment: "" }]}
-#     ]
-# doctors  = 
-# [   {doctor: "christopher",password: "111christ", age: "45", specialty: "GP"}, 
-#     {doctor: "randolphoe", password: "111rando" , age: "55", specialty: "Surgeon"}
-# ]
+
 
 # secur_data = SecureData.new
 
@@ -86,7 +91,6 @@ app_guide.run_medirecord!
 
 # File.write(doctor_file_path, Marshal.dump(doctors))
 
-# File.write(doctor_file_path, JSON.dump(doctors))
 
 
 

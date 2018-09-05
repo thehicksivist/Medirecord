@@ -55,7 +55,7 @@ class AppGuide
     end
 
     # If result is :quit, Display conclusion Message and close App.
-    display_exiting!("Thanks for using MediRecord. Goodbye!")
+    display_exiting!("Thanks for using MediRecord App. Goodbye!")
   end
 
   def get_option
@@ -104,9 +104,22 @@ class AppGuide
         
         #patient = load_patient_record(patient_name)
         patient = view_all_patient_records(patient_name)
+        #p patient.inspect if patient
         puts "-" * 77
         print "What would like to do, Dr. #{user_name}? Options(update, quit) > "
-        puts task = gets.chomp.strip.downcase 
+        task = gets.chomp.strip.downcase 
+        if task == "update"
+          patient_condition = Patient.get_patient_condition
+          puts patient_name
+          patient_condition[:username] = patient[:username] 
+          patient_condition[:password] = patient[:password]
+          patient_condition[:dob]      = patient[:dob]
+          patient_condition[:age]      = patient[:age]
+          p patient_condition.inspect 
+          save_records(patient_name, patient_condition)
+          puts "Recorded updated..."
+          gets
+        end
       end
 
       #p @data 
@@ -160,7 +173,25 @@ class AppGuide
     # End case task
     end
   end
-
+  
+  def write_file
+    File.open(@@patient_file_path, "w") do |file|
+       file.write(JSON.dump(patients))
+      end
+    end
+  def save_records(username, record={})
+      @@data.each do |patient|
+        patient.each do |key, value|
+          puts "#{key} #{value[0][:username]}"
+          if value[0][:username].downcase == username.downcase
+            value << record
+          end
+        end
+    end  
+    #Write to json file
+    #write_file
+  end
+  
   def load_patient_record(patient_name)
     display_logo
     puts "-" * 62
@@ -197,11 +228,11 @@ class AppGuide
           value.each_with_index do |k, v|
             puts "#{k[:username]} #{k[:dob]}\t\t#{k[:age]}\t#{k[:date]}\t#{k[:illness]}\t\t#{k[:treatment]} "
           end
-          return true
+          return value[value.length - 1]
         end
       end
     end
-    return false
+    return nil
   end
   
   def view_current_records(user_name)

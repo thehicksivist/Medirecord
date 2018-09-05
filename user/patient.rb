@@ -1,18 +1,27 @@
 #creating a patient class that holds the details of a patient for the medical records
 class Patient
-    
-    def save_patient_record
-        patients = []
-        @patients << {patient:{
-            name: "", password: "", dob: "", age: 0, height: 0, weight: 0, ailment: "", treatment: "", 
-            time: Time.now
-        }}
+    def self.get_patient_condition
+        patient = {}
+        # Get the patient's diagnosis and prescription
+        query   = query_diagnosis_prescription
+        patient = {username: "", password: "", dob: "", age: "", 
+                   date: Time.now.strftime("%Y/%m/%d") , 
+                   illness: query[0], 
+                   treatment: query[0]
+                 }
 
-        return patients
+        return patient
     end
 
-    def load_patients_records(path)
-        
+    def self.query_diagnosis_prescription
+        query = []
+        print "What are you are you treating the patient for today? > "
+        user_input = gets.chomp.strip
+        query << user_input
+        print "What medication are you prescribing? > "
+        user_input = gets.chomp.strip
+        query << user_input
+        return query
     end
     def self.get_patient_name
         #read from list of doctors to check if doctor exists
