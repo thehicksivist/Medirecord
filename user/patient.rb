@@ -7,7 +7,7 @@ class Patient
         patient = {username: "", password: "", dob: "", age: "", 
                    date: Time.now.strftime("%Y/%m/%d") , 
                    illness: query[0], 
-                   treatment: query[0]
+                   treatment: query[1]
                  }
 
         return patient

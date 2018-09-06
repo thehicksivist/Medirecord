@@ -115,9 +115,12 @@ class AppGuide
           patient_condition[:password] = patient[:password]
           patient_condition[:dob]      = patient[:dob]
           patient_condition[:age]      = patient[:age]
-          p patient_condition.inspect 
+          #p patient_condition.inspect 
           save_records(patient_name, patient_condition)
-          puts "Recorded updated..."
+          patient = view_all_patient_records(patient_name)
+          puts "-" * 77
+          #print "Recorded updated...  "
+          prompt_user(nil, "Recorded updated. press any key to... ", 19)
           gets
         end
       end
@@ -176,7 +179,7 @@ class AppGuide
   
   def write_file
     File.open(@@patient_file_path, "w") do |file|
-       file.write(JSON.dump(patients))
+       file.write(JSON.dump(@@data))
       end
     end
   def save_records(username, record={})
@@ -189,7 +192,7 @@ class AppGuide
         end
     end  
     #Write to json file
-    #write_file
+    write_file
   end
   
   def load_patient_record(patient_name)
