@@ -66,7 +66,7 @@ class AppGuide
 
     option = nil
     until ['1','2','q', 'quit'].include?(option)
-      puts "I don't understand that." if option
+      prompt_user(nil, "#{colorize("I don't understand that command! ", $font_colors[:red])}\n", 19) if option
       print "#{' '.ljust(20)}>  Select: "
       get_input = gets.chomp 
 
@@ -240,9 +240,8 @@ class AppGuide
   
   def view_current_records(user_name)
     display_intro
-    puts "#{user_name.capitalize}, here is a summary of your visits to doctors in the last 30 Days"
-    puts 
-    puts "Name\tDOB\t\tAge\tLast Visit\tTreated For\tMedication"
+    puts "\n#{user_name.capitalize}, here is a summary of your last visit."
+    puts "\nName\tDOB\t\tAge\tLast Visit\tTreated For\tMedication"
     puts "-" * 77
     # PATIENT VIEW: MOST RECENT HISTORICAL RECORDS
     @@data.each do |patient|

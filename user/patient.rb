@@ -4,7 +4,7 @@ class Patient
         patient = {}
         # Get the patient's diagnosis and prescription
         query   = query_diagnosis_prescription
-        patient = {username: "", password: "", dob: "", age: "", 
+        patient = {username: "john", password: "123John", dob: "12/02/2000", age: "18", 
                    date: Time.now.strftime("%Y/%m/%d") , 
                    illness: query[0], 
                    treatment: query[1]
