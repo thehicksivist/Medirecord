@@ -107,10 +107,23 @@ IMAGES:
 ![trelloscreenshot3](docs/trello3.pdf)
 ![trelloscreenshot4](docs/trello4.pdf)
 
-![evernotes](docs/evernotes.pdf)
-
+#tests during build:
 ![test1](docs/test1.pdf)
 ![test2](docs/test2.pdf)
+
+#Evernotes:
+![evernotes](docs/evernotes.pdf)
+
+#Paper notes:
+![papernote1](docs/Papernotes/papernote1.jpg)
+![papernote2](docs/Papernotes/papernote2.jpg)
+![papernote3](docs/Papernotes/papernote3.jpg)
+![papernote4](docs/Papernotes/papernote4.jpg)
+![papernote5](docs/Papernotes/papernote5.jpg)
+![papernote6](docs/Papernotes/papernote6.jpg)
+
+
+
 
 
 
