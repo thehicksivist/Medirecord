@@ -15,7 +15,7 @@ class Patient
 
     def self.query_diagnosis_prescription
         query = []
-        print "What are you are you treating the patient for today? > "
+        print "What are you treating the patient for today? > "
         user_input = gets.chomp.strip
         query << user_input
         print "What medication are you prescribing? > "

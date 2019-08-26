@@ -123,6 +123,9 @@ class AppGuide
           prompt_user(nil, "Recorded updated. press any key to... ", 19)
           gets
         end
+      else
+        #prompt_user(nil, "Incorrect username/password. press any key to... ", 19)
+        login_failed("Incorrect username/password!")
       end
 
       #p @data 
@@ -160,9 +163,8 @@ class AppGuide
         else
           prompt_user(nil, "I don't understand that command, #{user_name.capitalize}\n", 19)
         end
-        
       end
-      
+      login_failed("Incorrect username/password!")
       return task
 
     # when task is 3 to login as HR (OPTIONAL)
@@ -209,6 +211,10 @@ class AppGuide
     return false 
   end
 
+  def login_failed(message =nil)
+      prompt_user(nil, "#{colorize("#{message} ", $font_colors[:red])} press any key to... ", 19)
+      gets 
+  end
   def verify_password!(username, password)
     @@data.each do |user|
       #p user
@@ -217,6 +223,7 @@ class AppGuide
          return true
       end
     end
+    #puts "FAILED TO LOGIN ...."
     return false 
   end
   def view_all_patient_records(patient_name)
